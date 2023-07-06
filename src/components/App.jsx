@@ -1,9 +1,13 @@
 import { Container, Main } from './App.styled';
 import DrawerAppBar from './AppBar';
+import ConferenceSection from './ConferenceSection/ConferenceSection';
 import Offer from './Offer/Offer';
 
 import '@fontsource/roboto';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import SpeakerSection from './SpeakerSection/SpeakerSection';
+import ScheduleSection from './ScheduleSection/ScheduleSection';
+import ContactSection from './ContactSection/ContactSection';
 
 const customTheme = createTheme({
   breakpoints: {
@@ -27,6 +31,10 @@ export const App = () => {
         <DrawerAppBar></DrawerAppBar>
         <Offer></Offer>
       </Main>
+      <ConferenceSection></ConferenceSection>
+      <SpeakerSection></SpeakerSection>
+      <ScheduleSection></ScheduleSection>
+      <ContactSection></ContactSection>
     </ThemeProvider>
   );
 };

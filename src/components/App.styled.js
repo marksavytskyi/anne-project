@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 
 export const Main = styled.div`
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: #0e0e2c;
+  padding-top: 20px;
+  padding-bottom: 60px;
 `;
 
 export const Container = styled.div`

@@ -8,41 +8,40 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import Container from '@mui/material/Container';
-import Person2Icon from '@mui/icons-material/Person2';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['About', 'Speakers', 'Schedule', 'Contact'];
+import LogoComponent from './LogoComponent/LogoComponent';
+
+const pages = ['Бачення', 'Спікери', 'Розклад', 'Контакти'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const settings = [
-    { label: 'Log In', path: '/login' },
-    { label: 'Sign Up', path: '/register' },
-  ];
 
   const handleOpenNavMenu = event => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = event => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const handleLinkClick = refId => {
+    const element = document.getElementById(refId);
+    if (element) {
+      const offset = 70; // Adjust this value to set the desired offset from the top
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const scrollTo = elementRect - bodyRect - offset;
 
-  const handleLogOut = () => {
-    handleCloseUserMenu();
-  };
+      window.scrollTo({
+        top: scrollTo,
+        behavior: 'smooth',
+      });
 
+      handleCloseNavMenu();
+    }
+  };
   return (
     <AppBar
       position="static"
@@ -67,9 +66,8 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            SOCONF
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -99,14 +97,21 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map(page => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem
+                  key={page}
+                  onClick={() => handleLinkClick(`section-${index}`)}
+                  sx={{
+                    textAlign: 'center',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Typography>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <LogoComponent></LogoComponent>
           <Typography
             variant="h5"
             noWrap
@@ -123,7 +128,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            SOCONF
           </Typography>
           <Box
             sx={{
@@ -133,9 +138,9 @@ function ResponsiveAppBar() {
             }}
           >
             {true &&
-              pages.map(page => (
+              pages.map((page, index) => (
                 <Button
-                  to="/contacts"
+                  href={`#section-${index}`}
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{
