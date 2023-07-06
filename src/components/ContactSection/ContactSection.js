@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Typography, Grid } from '@mui/material';
-import { Email, Phone, LocationOn } from '@mui/icons-material';
+import { Phone, LocationOn } from '@mui/icons-material';
 import styled from '@emotion/styled';
 import { Container } from 'components/App.styled';
 import { Title } from 'components/Offer/Offer.styled';
@@ -67,14 +67,29 @@ const ContactSection = () => {
 
   const PulseButton1 = styled(IconButton)`
     animation: ${pulseAnimation1} 3s infinite;
+
+    @media screen and (min-width: 768px) {
+      width: 44px;
+      height: 44px;
+    }
   `;
 
   const PulseButton2 = styled(IconButton)`
     animation: ${pulseAnimation2} 4s infinite;
+
+    @media screen and (min-width: 768px) {
+      width: 44px;
+      height: 44px;
+    }
   `;
 
   const PulseButton3 = styled(IconButton)`
     animation: ${pulseAnimation3} 5s infinite;
+
+    @media screen and (min-width: 768px) {
+      width: 44px;
+      height: 44px;
+    }
   `;
 
   const Section = styled.section`
@@ -114,17 +129,17 @@ const ContactSection = () => {
           spacing={2}
           style={{ justifyContent: 'center', marginBottom: 12 }}
         >
-          <ContactItem item xs={12} sm={6}>
+          <ContactItem item xs={16} sm={6}>
             <PulseButton1 component="a" href={instagramLink} target="_blank">
-              <InstagramIcon style={{ fill: 'white' }} />
+              <InstagramIcon xs={16} sm={6} style={{ fill: 'white' }} />
             </PulseButton1>
           </ContactItem>
-          <ContactItem item xs={12} sm={6}>
+          <ContactItem item xs={16} sm={6}>
             <PulseButton2 onClick={handlePhoneClick}>
               <Phone style={{ fill: 'white' }} />
             </PulseButton2>
           </ContactItem>
-          <ContactItem item xs={12}>
+          <ContactItem item xs={16}>
             <PulseButton3 onClick={handleGoogleMapsClick}>
               <LocationOn style={{ fill: 'white' }} />
             </PulseButton3>

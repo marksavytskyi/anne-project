@@ -47,6 +47,9 @@ const SpeakerSection = () => {
     cssEase: 'linear',
     appendDots: dots => <CustomDots>{dots}</CustomDots>,
     arrows: false,
+    autoplay: true,
+    focusOnSelect: true,
+    autoplaySpeed: 5000,
   };
 
   return (

@@ -13,7 +13,9 @@ export const Desc = styled(Subtitle)`
   margin-bottom: 24px;
 `;
 
-export const ActionTitle = styled(AboutTitle)`
+export const ActionTitle = styled.h3`
+  color: #3a86ff;
+  text-align: center;
   font-size: 20px;
   animation: slideAnimation 2s infinite;
   margin: 0;

@@ -40,8 +40,8 @@ export const ScheduleGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
+  ${props => props.theme.breakpoints.up('md')} {
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 `;
@@ -71,7 +71,7 @@ export const ScheduleCard = styled.div`
   transition: box-shadow 0.3s ease;
 
   @media (min-width: 768px) {
-    width: 300px;
+    max-width: 300px;
     margin-top: 24px;
   }
   &:hover {

@@ -29,6 +29,10 @@ export const LogoContainer = styled.div`
   &:hover {
     transform: rotate(360deg);
   }
+
+  ${props => props.theme.breakpoints.up('md')} {
+    margin-left: 32px;
+  }
 `;
 
 export const Logo = styled.img`
@@ -37,4 +41,9 @@ export const Logo = styled.img`
   border-radius: 50%;
   margin-right: 8px;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.8); /* Add white shadow effect */
+
+  ${props => props.theme.breakpoints.up('md')} {
+    width: 48px;
+    height: 48px;
+  }
 `;
