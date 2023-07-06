@@ -94,12 +94,12 @@ const ContactSection = () => {
     align-items: center;
     gap: 12px;
     flex-basis: auto;
+
+    @media screen and (min-width: 480px) {
+      flex-basis: auto;
+    }
   `;
 
-  const PhoneLink = styled.span`
-    cursor: pointer;
-    text-decoration: underline;
-  `;
   const instagramLink =
     'https://instagram.com/so.conference?igshid=Y2I2MzMwZWM3ZA==';
 

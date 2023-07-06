@@ -46,12 +46,13 @@ const SpeakerSection = () => {
     fade: true,
     cssEase: 'linear',
     appendDots: dots => <CustomDots>{dots}</CustomDots>,
+    arrows: false,
   };
 
   return (
     <section id="section-1" style={{ backgroundColor: '#0e0e2c' }}>
-      <SliderWrapper>
-        <Container>
+      <Container>
+        <SliderWrapper>
           <Title>Speakers</Title>
           <Slider {...settings}>
             {speakersData.map((speaker, index) => (
@@ -62,8 +63,8 @@ const SpeakerSection = () => {
               </SpeakerCard>
             ))}
           </Slider>
-        </Container>
-      </SliderWrapper>
+        </SliderWrapper>
+      </Container>
     </section>
   );
 };

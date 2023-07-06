@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
 
-export const OfferWrapper = styled.div``;
+export const OfferWrapper = styled.div`
+  ${props => props.theme.breakpoints.up('md')} {
+    /* Styles for medium and larger screens */
+    display: flex;
+  }
+`;
 
 export const DescWrapper = styled.div`
   text-align: center;
@@ -44,11 +49,21 @@ export const Input = styled.input`
 
 export const Button = styled.button``;
 
-export const ImageWrapper = styled.div`
-  ${props => props.theme.breakpoints.down('md')} {
-    /* Styles for medium and larger screens */
-    display: none;
-  }
-`;
+// export const ImageWrapper = styled.div`
+//   ${props => props.theme.breakpoints.down('md')} {
+//     /* Styles for medium and larger screens */
+//     display: none;
+//   }
+//   ${props => props.theme.breakpoints.up('md')} {
+//     width: 300px; /* Sets the width of the image to 100% of its container */
+//     height: auto; /* Maintains the image's aspect ratio */
+//     border-radius: 4px; /* Adds a border-radius for rounded corners */
+//     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adds a box shadow for a subtle effect */
+//   }
+// `;
 
-export const Image = styled.img``;
+// export const Image = styled.img`
+//   display: block;
+//   width: 100%; /* Set the width of the image to fill its container */
+//   height: auto; /* Maintain the image's aspect ratio */
+// `;
