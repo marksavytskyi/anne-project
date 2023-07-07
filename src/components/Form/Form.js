@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const validationSchema = yup.object({
   name: yup.string('Enter your name').required('Name is required'),
@@ -20,10 +22,30 @@ const WithMaterialUI = () => {
       phone: '',
     },
     validationSchema: validationSchema,
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    onSubmit: values => {},
   });
+
+  const form = useRef();
+
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_m23dptf',
+        'template_8j49fii',
+        form.current,
+        'oVdIW_p_EG4-iWJxy'
+      )
+      .then(
+        result => {
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const handlePhoneChange = event => {
     const { value } = event.target;
@@ -32,26 +54,6 @@ const WithMaterialUI = () => {
       formik.handleChange(event);
     } else {
       formik.handleChange(event);
-    }
-  };
-
-  const handleSubmit = async values => {
-    try {
-      const response = await fetch('/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        alert('Form submitted successfully');
-      } else {
-        alert('Failed to submit form');
-      }
-    } catch (error) {
-      console.error('Error submitting form', error);
     }
   };
 
@@ -107,6 +109,7 @@ const WithMaterialUI = () => {
 
   return (
     <div>
+      <form ref={form} onSubmit={sendEmail}>
       <form
         onSubmit={formik.handleSubmit}
         name="contact"
@@ -145,7 +148,7 @@ const WithMaterialUI = () => {
           variant="contained"
           fullWidth
           type="submit"
-          onClick={() => handleSubmit(formik.values)}
+          value="Send"
         >
           Submit
         </SubmitButton>
