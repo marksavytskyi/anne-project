@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Typography, Grid } from '@mui/material';
-import { Email, Phone, LocationOn } from '@mui/icons-material';
+import { Phone, LocationOn } from '@mui/icons-material';
 import styled from '@emotion/styled';
 import { Container } from 'components/App.styled';
 import { Title } from 'components/Offer/Offer.styled';

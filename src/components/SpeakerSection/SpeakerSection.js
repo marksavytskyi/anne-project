@@ -9,8 +9,6 @@ import {
   SpeakerCard,
   Title,
 } from './SpeakerSection.styled';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
 const speakersData = [
   {
@@ -41,9 +39,6 @@ const speakersData = [
 ];
 
 const SpeakerSection = () => {
-  const theme = useTheme();
-  const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
-
   const settings = {
     dots: true,
     infinite: true,
