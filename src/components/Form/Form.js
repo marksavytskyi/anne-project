@@ -107,7 +107,12 @@ const WithMaterialUI = () => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit}>
+      <form
+        onSubmit={formik.handleSubmit}
+        name="contact"
+        method="post"
+        data-netlify="true"
+      >
         <FormRow>
           <FormItem>
             <WhiteTextField
