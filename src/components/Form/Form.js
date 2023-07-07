@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import styled from 'styled-components';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const validationSchema = yup.object({
   name: yup.string('Enter your name').required('Name is required'),
@@ -19,40 +21,31 @@ const WithMaterialUI = () => {
       name: '',
       phone: '',
     },
-    validate: values => {
-      const errors = {};
-
-      if (!values.name) {
-        errors.name = 'Required';
-      }
-
-      if (!values.phone) {
-        errors.phone = 'Required';
-      }
-
-      return errors;
-    },
-    onSubmit: async (values, { setSubmitting, resetForm }) => {
-      try {
-        const response = await fetch('/.netlify/functions/submit-form', {
-          method: 'POST',
-          body: JSON.stringify(values),
-        });
-
-        if (response.ok) {
-          alert('Form submitted successfully');
-          resetForm();
-        } else {
-          alert('Failed to submit form');
-        }
-      } catch (error) {
-        console.error(error);
-        alert('An error occurred while submitting the form');
-      }
-
-      setSubmitting(false);
-    },
+    validationSchema: validationSchema,
+    onSubmit: values => {},
   });
+
+  const form = useRef();
+
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_m23dptf',
+        'template_8j49fii',
+        form.current,
+        'oVdIW_p_EG4-iWJxy'
+      )
+      .then(
+        result => {
+          console.log(result.text);
+        },
+        error => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const handlePhoneChange = event => {
     const { value } = event.target;
@@ -116,7 +109,7 @@ const WithMaterialUI = () => {
 
   return (
     <div>
-      <form>
+      <form ref={form} onSubmit={sendEmail}>
         <FormRow>
           <FormItem>
             <WhiteTextField
@@ -149,6 +142,7 @@ const WithMaterialUI = () => {
           variant="contained"
           fullWidth
           type="submit"
+          value="Send"
         >
           Submit
         </SubmitButton>
