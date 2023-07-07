@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Logo, LogoContainer, HeartOverlay } from '../AppBar.styled';
+import { Logo, LogoContainer } from '../AppBar.styled';
 
 const LogoComponent = () => {
   const [isHeart, setIsHeart] = useState(false);

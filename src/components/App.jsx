@@ -1,4 +1,4 @@
-import { Container, Main } from './App.styled';
+import { Main } from './App.styled';
 import DrawerAppBar from './AppBar';
 import ConferenceSection from './ConferenceSection/ConferenceSection';
 import Offer from './Offer/Offer';

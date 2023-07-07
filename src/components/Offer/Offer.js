@@ -1,14 +1,5 @@
 import { Container } from 'components/App.styled';
-import {
-  OfferWrapper,
-  DescWrapper,
-  Title,
-  Subtitle,
-  Input,
-  Button,
-  ImageWrapper,
-  Image,
-} from './Offer.styled';
+import { OfferWrapper, DescWrapper, Title, Subtitle } from './Offer.styled';
 import WithMaterialUI from 'components/Form/Form';
 
 const Offer = () => {
@@ -24,9 +15,6 @@ const Offer = () => {
             </Subtitle>
             <WithMaterialUI></WithMaterialUI>
           </DescWrapper>
-          {/* <ImageWrapper style={{ flex: 1 }}>
-            <Image src={require('../../images/header.png')} alt="img"></Image>
-          </ImageWrapper> */}
         </OfferWrapper>
       </Container>
     </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import { Desc, AboutTitle, ActionTitle } from './ConferenceSection.styled';
 import { Container } from 'components/App.styled';
 

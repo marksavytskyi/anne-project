@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Typography, Grid } from '@mui/material';
-import { Phone, LocationOn } from '@mui/icons-material';
+import { Email, Phone, LocationOn } from '@mui/icons-material';
 import styled from '@emotion/styled';
 import { Container } from 'components/App.styled';
 import { Title } from 'components/Offer/Offer.styled';
@@ -9,7 +9,13 @@ import { keyframes } from '@emotion/react';
 import { IconButton } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 const ContactSection = () => {
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.up('md'));
+
   const phoneNumber = '+380 97 023 89 62';
 
   const handlePhoneClick = () => {
@@ -19,15 +25,6 @@ const ContactSection = () => {
   const handleGoogleMapsClick = () => {
     window.open(googleMapsLink, '_blank');
   };
-
-  const slideAnimation = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`;
 
   const pulseAnimation1 = keyframes`
   0% {
@@ -67,29 +64,14 @@ const ContactSection = () => {
 
   const PulseButton1 = styled(IconButton)`
     animation: ${pulseAnimation1} 3s infinite;
-
-    @media screen and (min-width: 768px) {
-      width: 44px;
-      height: 44px;
-    }
   `;
 
   const PulseButton2 = styled(IconButton)`
     animation: ${pulseAnimation2} 4s infinite;
-
-    @media screen and (min-width: 768px) {
-      width: 44px;
-      height: 44px;
-    }
   `;
 
   const PulseButton3 = styled(IconButton)`
     animation: ${pulseAnimation3} 5s infinite;
-
-    @media screen and (min-width: 768px) {
-      width: 44px;
-      height: 44px;
-    }
   `;
 
   const Section = styled.section`
@@ -100,8 +82,6 @@ const ContactSection = () => {
 
   const ContactTitle = styled(Title)`
     text-align: center;
-
-    animation: ${slideAnimation} 1s ease-in;
   `;
 
   const ContactItem = styled(Grid)`
@@ -109,8 +89,7 @@ const ContactSection = () => {
     align-items: center;
     gap: 12px;
     flex-basis: auto;
-
-    @media screen and (min-width: 480px) {
+    @media (min-width: 480px) {
       flex-basis: auto;
     }
   `;
@@ -129,19 +108,25 @@ const ContactSection = () => {
           spacing={2}
           style={{ justifyContent: 'center', marginBottom: 12 }}
         >
-          <ContactItem item xs={16} sm={6}>
+          <ContactItem item xs={12}>
             <PulseButton1 component="a" href={instagramLink} target="_blank">
-              <InstagramIcon xs={16} sm={6} style={{ fill: 'white' }} />
+              <InstagramIcon
+                style={{ fill: 'white', fontSize: isTablet ? '48px' : '24px' }}
+              />
             </PulseButton1>
           </ContactItem>
-          <ContactItem item xs={16} sm={6}>
+          <ContactItem item xs={12}>
             <PulseButton2 onClick={handlePhoneClick}>
-              <Phone style={{ fill: 'white' }} />
+              <Phone
+                style={{ fill: 'white', fontSize: isTablet ? '48px' : '24px' }}
+              />
             </PulseButton2>
           </ContactItem>
-          <ContactItem item xs={16}>
+          <ContactItem item xs={12}>
             <PulseButton3 onClick={handleGoogleMapsClick}>
-              <LocationOn style={{ fill: 'white' }} />
+              <LocationOn
+                style={{ fill: 'white', fontSize: isTablet ? '48px' : '24px' }}
+              />
             </PulseButton3>
           </ContactItem>
         </Grid>
