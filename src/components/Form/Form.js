@@ -19,9 +19,38 @@ const WithMaterialUI = () => {
       name: '',
       phone: '',
     },
-    validationSchema: validationSchema,
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    validate: values => {
+      const errors = {};
+
+      if (!values.name) {
+        errors.name = 'Required';
+      }
+
+      if (!values.phone) {
+        errors.phone = 'Required';
+      }
+
+      return errors;
+    },
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      try {
+        const response = await fetch('/.netlify/functions/submit-form', {
+          method: 'POST',
+          body: JSON.stringify(values),
+        });
+
+        if (response.ok) {
+          alert('Form submitted successfully');
+          resetForm();
+        } else {
+          alert('Failed to submit form');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('An error occurred while submitting the form');
+      }
+
+      setSubmitting(false);
     },
   });
 
@@ -32,26 +61,6 @@ const WithMaterialUI = () => {
       formik.handleChange(event);
     } else {
       formik.handleChange(event);
-    }
-  };
-
-  const handleSubmit = async values => {
-    try {
-      const response = await fetch('/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        alert('Form submitted successfully');
-      } else {
-        alert('Failed to submit form');
-      }
-    } catch (error) {
-      console.error('Error submitting form', error);
     }
   };
 
@@ -107,7 +116,7 @@ const WithMaterialUI = () => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit}>
+      <form>
         <FormRow>
           <FormItem>
             <WhiteTextField
@@ -140,7 +149,6 @@ const WithMaterialUI = () => {
           variant="contained"
           fullWidth
           type="submit"
-          onClick={() => handleSubmit(formik.values)}
         >
           Submit
         </SubmitButton>
