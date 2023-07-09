@@ -8,7 +8,7 @@ const VideoSection = () => {
       <Container>
         <VideoWrapper>
           <VideoPlayer
-            url={require('../../images/master1.mp4')}
+            url="https://youtu.be/bbcr06F_PLM"
             width="100%"
             height="auto"
             controls
