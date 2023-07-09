@@ -15,26 +15,64 @@ const validationSchema = yup.object({
     .required('Phone number is required'),
 });
 
+const FormRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+`;
+
+const FormItem = styled.div`
+  flex-basis: 100%;
+  margin-bottom: 12px;
+
+  @media (min-width: 768px) {
+    flex-basis: 48%;
+    margin-bottom: 16px;
+  }
+`;
+
+const SubmitButton = styled(Button)`
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-top: 24px;
+  }
+`;
+
+const WhiteTextField = styled(TextField)`
+  .MuiInputBase-input,
+  .MuiInputLabel-root,
+  .MuiOutlinedInput-root {
+    color: white;
+  }
+
+  .MuiOutlinedInput-root {
+    fieldset {
+      border-color: white;
+    }
+    &:hover fieldset {
+      border-color: white;
+    }
+    &.Mui-focused fieldset {
+      border-color: white;
+    }
+  }
+`;
+
 const WithMaterialUI = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      phone: '',
-    },
-    validationSchema: validationSchema,
-    onSubmit: values => {},
-  });
+  const formRef = useRef(null);
 
-  const form = useRef();
-
-  const sendEmail = e => {
-    e.preventDefault();
-
+  const sendEmail = values => {
     emailjs
       .sendForm(
         'service_m23dptf',
         'template_8j49fii',
-        form.current,
+        formRef.current,
+
         'oVdIW_p_EG4-iWJxy'
       )
       .then(
@@ -47,6 +85,17 @@ const WithMaterialUI = () => {
       );
   };
 
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      phone: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: sendEmail,
+  });
+
+  // const form = formik.form.current;
+
   const handlePhoneChange = event => {
     const { value } = event.target;
     if (!value.startsWith('+')) {
@@ -57,65 +106,11 @@ const WithMaterialUI = () => {
     }
   };
 
-  const FormRow = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-      align-items: center;
-    }
-  `;
-
-  const FormItem = styled.div`
-    flex-basis: 100%;
-    margin-bottom: 12px;
-
-    @media (min-width: 768px) {
-      flex-basis: 48%;
-      margin-bottom: 16px;
-    }
-  `;
-
-  const SubmitButton = styled(Button)`
-    @media (min-width: 768px) {
-      width: 50%;
-      margin-top: 24px;
-    }
-  `;
-
-  const WhiteTextField = styled(TextField)`
-    .MuiInputBase-input,
-    .MuiInputLabel-root,
-    .MuiOutlinedInput-root {
-      color: white;
-    }
-
-    .MuiOutlinedInput-root {
-      fieldset {
-        border-color: white;
-      }
-      &:hover fieldset {
-        border-color: white;
-      }
-      &.Mui-focused fieldset {
-        border-color: white;
-      }
-    }
-  `;
-
   // Rest of your component code...
 
   return (
     <div>
-      <form ref={form} onSubmit={sendEmail}>
-      <form
-        onSubmit={formik.handleSubmit}
-        name="contact"
-        method="post"
-        data-netlify="true"
-      >
+      <form onSubmit={formik.handleSubmit} ref={formRef}>
         <FormRow>
           <FormItem>
             <WhiteTextField

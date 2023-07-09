@@ -1,75 +1,94 @@
 import React from 'react';
-import { Container } from 'components/App.styled';
+
 import {
+  AnimatedShadow,
   DayColumn,
   DayTitle,
-  EventTitle,
   ScheduleCard,
-  ScheduleGrid,
   Section,
   SectionTitle,
-  TimeSlot,
+  StyledContainer,
+  StyledNextArrow,
+  StyledPrevArrow,
 } from './ScheduleSection.styled';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+// Import the three images for the carousel
+import image1 from 'images/schedule1.jpg';
+import image2 from 'images/schedule2.jpg';
+import image3 from 'images/schedule3.jpg';
 
 const TimeScheduleSection = () => {
   const days = ['Day 1', 'Day 2', 'Day 3'];
-  const timeSlots = [
-    ['15:00 - 17:00', '17:00 - 20:00'], // Day 1 has 2 time slots
-    [
-      '10:00 - 11:00',
-      '11:00 - 13:00',
-      '13:00 - 14:00',
-      '14:00 - 15:00',
-      '16:00 - 17:00',
-      '17:00 - 19:00',
-      '19:00 - ...',
-    ], // Day 2 has 7 time slots
-    [
-      '11:00 - 13:00',
-      '13:00 - 14:00',
-      '14:00 - 15:30',
-      '15:30 - 16:00',
-      '16:00 - 18:00',
-    ], // Day 3 has 5 time slots
-  ];
-  const events = [
-    ['Реєстрація', '"Не так важливо, що ти думаєш"'], // Events for Day 1
-    [
-      'Реєстрація',
-      '"Не так важливо, що ти думаєш"',
-      'Обід',
-      'Сhill-time',
-      'Кахут',
-      'Сhill time + трансфер до центра міста',
-      'Молитва за Україну на Дерибасивській',
-    ], // Events for Day 2
-    [
-      '"Не так важливо, що ти думаєш"',
-      'Обід',
-      'Talk-show',
-      'Сhill-time',
-      '"але Бог"',
-    ], // Events for Day 3
-  ];
 
+  const CustomPrevArrow = ({ onClick }) => (
+    <StyledPrevArrow
+      onClick={onClick}
+      onMouseEnter={e =>
+        (e.target.style.transform = 'translateY(-50%) scale(1.1)')
+      }
+      onMouseLeave={e =>
+        (e.target.style.transform = 'translateY(-50%) scale(1)')
+      }
+    >
+      Prev
+    </StyledPrevArrow>
+  );
+
+  const CustomNextArrow = ({ onClick }) => (
+    <StyledNextArrow
+      onClick={onClick}
+      onMouseEnter={e =>
+        (e.target.style.transform = 'translateY(-50%) scale(1.1)')
+      }
+      onMouseLeave={e =>
+        (e.target.style.transform = 'translateY(-50%) scale(1)')
+      }
+    >
+      Next
+    </StyledNextArrow>
+  );
   return (
     <Section id="section-2">
-      <Container>
+      <StyledContainer>
         <SectionTitle>Time Schedule</SectionTitle>
-        <ScheduleGrid>
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={false}
+          centerMode={true}
+          centerSlidePercentage={50}
+          interval={0} // Disable auto-rotation
+          selectedItem={1} // Set Day 2 as the initially centered slide
+          renderArrowPrev={(onClickHandler, hasPrev, label) =>
+            hasPrev && (
+              <CustomPrevArrow onClick={onClickHandler} label={label} />
+            )
+          }
+          renderArrowNext={(onClickHandler, hasNext, label) =>
+            hasNext && (
+              <CustomNextArrow onClick={onClickHandler} label={label} />
+            )
+          }
+        >
           {days.map((day, dayIndex) => (
             <DayColumn key={dayIndex}>
               <DayTitle>{day}</DayTitle>
-              {timeSlots[dayIndex].map((timeSlot, slotIndex) => (
-                <ScheduleCard key={slotIndex}>
-                  <TimeSlot>{timeSlot}</TimeSlot>
-                  <EventTitle>{events[dayIndex][slotIndex]}</EventTitle>
-                </ScheduleCard>
-              ))}
+              {dayIndex !== 0 && <div style={{ marginRight: '20px' }} />}
+              <ScheduleCard>
+                <img
+                  src={
+                    dayIndex === 0 ? image1 : dayIndex === 1 ? image2 : image3
+                  }
+                  alt={`Day ${dayIndex + 1}`}
+                />
+              </ScheduleCard>
             </DayColumn>
           ))}
-        </ScheduleGrid>
-      </Container>
+        </Carousel>
+        <AnimatedShadow />
+      </StyledContainer>
     </Section>
   );
 };

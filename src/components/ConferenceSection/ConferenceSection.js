@@ -8,7 +8,7 @@ const ConferenceSection = () => {
     <Box
       component="section"
       id="section-0"
-      style={{ paddingBottom: 60, paddingTop: 40 }}
+      style={{ paddingBottom: 40, paddingTop: 40 }}
     >
       <Container>
         <AboutTitle variant="h2">Бачення</AboutTitle>

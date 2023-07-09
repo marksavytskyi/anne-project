@@ -2,16 +2,7 @@ import styled from '@emotion/styled';
 import { AboutTitle } from 'components/ConferenceSection/ConferenceSection.styled';
 
 import { keyframes } from '@emotion/react';
-import { Subtitle } from 'components/Offer/Offer.styled';
-
-const fadeInAnimation = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
+import { Container } from 'components/App.styled';
 
 const fadeInAnimationDay = keyframes`
   0% {
@@ -30,10 +21,9 @@ export const Section = styled.section`
 `;
 
 export const SectionTitle = styled(AboutTitle)`
-  /* color: #3a86ff;
+  color: #3a85ffce;
   text-align: center;
-  margin-bottom: 40px; */
-  animation: ${fadeInAnimation} 3s ease-in-out infinite;
+  margin-bottom: 40px;
 `;
 
 export const ScheduleGrid = styled.div`
@@ -79,13 +69,69 @@ export const ScheduleCard = styled.div`
   }
 `;
 
-export const TimeSlot = styled.p`
-  color: #000;
-  font-weight: bold;
-  margin-bottom: 8px;
+export const StyledContainer = styled(Container)`
+  background-color: #f5f5f5;
+  position: relative;
 `;
 
-export const EventTitle = styled(Subtitle)`
-  color: #333;
-  margin-bottom: 8px;
+export const whiteShadowAnimation = keyframes`
+  0% {
+    box-shadow: 0 0 0 gray;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px gray;
+  }
+  100% {
+    box-shadow: 0 0 0 gray;
+  }
+`;
+
+export const AnimatedShadow = styled.div`
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  animation: ${whiteShadowAnimation} 3s linear infinite;
+`;
+
+export const StyledPrevArrow = styled.div`
+  position: absolute;
+  z-index: 2;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10%;
+  border: 2px solid white;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background-color: #3a86ff;
+  color: white;
+  transition: transform 0.3s;
+  cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    padding: 3px 6px;
+  }
+`;
+
+export const StyledNextArrow = styled.div`
+  position: absolute;
+  z-index: 2;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10%;
+  border: 2px solid white;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background-color: #3a86ff;
+  color: white;
+  transition: transform 0.3s;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    padding: 3px 6px;
+  }
 `;

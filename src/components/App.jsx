@@ -8,6 +8,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SpeakerSection from './SpeakerSection/SpeakerSection';
 import ScheduleSection from './ScheduleSection/ScheduleSection';
 import ContactSection from './ContactSection/ContactSection';
+import VideoSection from './VideoSection/VideoSection';
 
 const customTheme = createTheme({
   breakpoints: {
@@ -32,6 +33,7 @@ export const App = () => {
         <Offer></Offer>
       </Main>
       <ConferenceSection></ConferenceSection>
+      <VideoSection></VideoSection>
       <SpeakerSection></SpeakerSection>
       <ScheduleSection></ScheduleSection>
       <ContactSection></ContactSection>
