@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import YouTube from 'react-youtube';
 
 export const Section = styled.section`
   background-color: white;
@@ -24,12 +23,4 @@ export const SectionTitle = styled.h2`
 export const VideoWrapper = styled.div`
   position: relative;
   /* padding-top: 56.25%; 16:9 aspect ratio for responsive video */
-`;
-
-export const VideoPlayer = styled(YouTube)`
-  position: absolute;
-  min-height: 300px;
-
-  top: 0;
-  left: 0;
 `;
