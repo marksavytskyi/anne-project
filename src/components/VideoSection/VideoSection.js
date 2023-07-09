@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, VideoPlayer, VideoWrapper } from './VideoSection.styled';
+import { Section, VideoWrapper } from './VideoSection.styled';
 import { Container } from 'components/App.styled';
 
 const VideoSection = () => {
@@ -7,12 +7,14 @@ const VideoSection = () => {
     <Section>
       <Container>
         <VideoWrapper>
-          <VideoPlayer
-            url="https://youtu.be/bbcr06F_PLM"
+          <iframe
             width="100%"
-            height="auto"
-            controls
-          />
+            height="300"
+            src="https://www.youtube.com/embed/bbcr06F_PLM"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </VideoWrapper>
       </Container>
     </Section>
