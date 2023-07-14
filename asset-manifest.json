@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.3ebc403f.css",
-    "main.js": "/static/js/main.c696f545.js",
-    "static/media/schedule1.jpg": "/static/media/schedule1.248d430fa919c60c4522.jpg",
-    "static/media/schedule2.jpg": "/static/media/schedule2.afee9524f88039cf81d0.jpg",
-    "static/media/schedule3.jpg": "/static/media/schedule3.6459c3fa824ddebc021d.jpg",
+    "main.js": "/static/js/main.3b60872e.js",
+    "static/media/schedule2.jpg": "/static/media/schedule2.cc50cba6f5acaff56ff9.jpg",
+    "static/media/schedule3.jpg": "/static/media/schedule3.c96505eab2975837995a.jpg",
+    "static/media/schedule1.jpg": "/static/media/schedule1.cc425067ac4ac050ff59.jpg",
     "static/media/nabil.jpg": "/static/media/nabil.74c8d06d81370f6aa331.jpg",
     "static/media/gera.jpg": "/static/media/gera.f126443f0e5a2afcaec7.jpg",
     "static/media/noname2.jpg": "/static/media/noname2.d050f98bfcf98e2ed460.jpg",
@@ -30,10 +30,10 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "index.html": "/index.html",
     "main.3ebc403f.css.map": "/static/css/main.3ebc403f.css.map",
-    "main.c696f545.js.map": "/static/js/main.c696f545.js.map"
+    "main.3b60872e.js.map": "/static/js/main.3b60872e.js.map"
   },
   "entrypoints": [
     "static/css/main.3ebc403f.css",
-    "static/js/main.c696f545.js"
+    "static/js/main.3b60872e.js"
   ]
 }
