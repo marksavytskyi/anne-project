@@ -16,7 +16,7 @@ const ContactSection = () => {
   const theme = useTheme();
   const isTablet = useMediaQuery(theme.breakpoints.up('md'));
 
-  const phoneNumber = '+380 97 023 89 62';
+  const phoneNumber = '+380 50 730 17 97';
 
   const handlePhoneClick = () => {
     window.location.href = `tel:${phoneNumber}`;
