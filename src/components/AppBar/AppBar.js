@@ -6,35 +6,9 @@ import Button from '@mui/material/Button';
 
 import LogoComponent from './LogoComponent/LogoComponent';
 
-const pages = ['Бачення', 'Спікери', 'Розклад', 'Контакти'];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = event => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleLinkClick = refId => {
-    const element = document.getElementById(refId);
-    if (element) {
-      const offset = 70; // Adjust this value to set the desired offset from the top
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const scrollTo = elementRect - bodyRect - offset;
-
-      window.scrollTo({
-        top: scrollTo,
-        behavior: 'smooth',
-      });
-
-      handleCloseNavMenu();
-    }
-  };
   return (
     <AppBar
       position="fixed"

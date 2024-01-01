@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { IoTriangle } from "react-icons/io5";
-import Button from '@mui/material/Button';
 
-// Mock data representing the schedule for three days
 const scheduleData = [
   {
     date: 'Четвер, 22 Лютого 2023',
@@ -51,15 +49,15 @@ const ConferenceSchedule = () => {
   return (
     <div className="container text-white p-10">
       <h1 className="text-6xl font-extrabold text-center mb-12">Conference Schedule</h1>
+      {/* eslint-disable-next-line */}
       {scheduleData.map((day, idx) => {
         if(idx === currentIdx) {
-          return  <div key={day.date} className="mb-8 w-1/2 mx-auto">
+          return <div key={day.date} className="mb-8 w-1/2 mx-auto">
             <div className="flex gap-4 justify-center items-center mb-6">
               <IoTriangle onClick={handlePrev} color="orange" size="30" className="-rotate-90"/>
               <h2 className="text-3xl font-bold  text-center">{day.date}</h2>
               <IoTriangle onClick={handleNext} color="orange" size="30" className="rotate-90"/>
             </div>
-
             {day.events.map((event, idx) => (
               <div key={idx} className="flex flex-row-reverse gap-14 items-center mb-4 w-full p-12 bg-[#2D3640]">
                 <div className="flex-grow">

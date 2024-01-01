@@ -1,4 +1,4 @@
-import { OfferWrapper, DescWrapper, Title, Subtitle } from './Offer.styled';
+import { Title } from './Offer.styled';
 import CountDown from '../CountDown';
 
 

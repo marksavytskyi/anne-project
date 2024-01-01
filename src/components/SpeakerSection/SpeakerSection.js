@@ -1,14 +1,6 @@
 import React from 'react';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Container } from 'components/App.styled';
-import {
-  CustomDots,
-  SliderWrapper,
-  SpeakerCard,
-  Title,
-} from './SpeakerSection.styled';
 import logo from "../../images/logo.jpg"
 
 const speakersData = [
@@ -40,18 +32,18 @@ const speakersData = [
 ];
 
 const SpeakerSection = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
-    appendDots: dots => <CustomDots>{dots}</CustomDots>,
-    arrows: false,
-    autoplay: true,
-    focusOnSelect: true,
-    autoplaySpeed: 5000,
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   fade: true,
+  //   cssEase: 'linear',
+  //   appendDots: dots => <CustomDots>{dots}</CustomDots>,
+  //   arrows: false,
+  //   autoplay: true,
+  //   focusOnSelect: true,
+  //   autoplaySpeed: 5000,
+  // };
 
   return (
     <section className="container text-white p-10 pb-24">
@@ -76,22 +68,6 @@ const SpeakerSection = () => {
         })}
       </div>
     </section>
-    // <section id="section-1" className="container">
-    //       <h1 className="text-6xl text-white font-extrabold text-center" style={{fontFamily: "Ubuntu"}}>Speakers</h1>
-    //   {speakers.map(el => {
-    //     return <div></div>
-    //   })}
-    //       {/*<Slider {...settings}>*/}
-    //       {/*  {speakersData.map((speaker, index) => (*/}
-    //       {/*    <SpeakerCard key={index}>*/}
-    //       {/*      <img src={speaker.image} alt={speaker.name} />*/}
-    //       {/*      <h3>{speaker.name}</h3>*/}
-    //       {/*      <p>{speaker.about}</p>*/}
-    //       {/*    </SpeakerCard>*/}
-    //       {/*  ))}*/}
-    //       {/*</Slider>*/}
-    //
-    // </section>
   );
 };
 
