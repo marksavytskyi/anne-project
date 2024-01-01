@@ -5,15 +5,21 @@ import logo from "../../images/logo.jpg"
 
 const speakersData = [
   {
+    name: 'Микола Савчук',
+    about:
+      'Єпископ в обʼєднанні церков «Спасіння», журналіст, спікер ',
+    image: require('../../images/new/mikola.jpg'),
+  },
+  {
     name: 'Стас Герасімов',
     about:
-      'Молодіжний  пастор',
+      'Молодіжний пастор церкви «Християнський центр Пробудження», капелан, волонтер',
     image: require('../../images/new/stas.png'),
   },
   {
     name: 'Марк Сергеєв',
     about:
-      'Молодіжний  пастор',
+      'Молодіжний пастор МХЦ, Мелітополь. Учасник групи прославлення «M.Worship», фронт-мен християнської сучасної групи 4Uband',
     image: require('../../images/new/mark.png'),
   },
   {
@@ -22,12 +28,7 @@ const speakersData = [
       'Молодіжний  пастор',
     image: require('../../images/new/tkachenko.png'),
   },
-  {
-    name: 'Микола Савчук',
-    about:
-      'Пастор',
-    image: require('../../images/new/mikola.jpg'),
-  },
+
   // Add more speakers here...
 ];
 
@@ -55,14 +56,21 @@ const SpeakerSection = () => {
           const insertLogo = idx === 0 || idx === 2;
           return (
             <React.Fragment key={speaker.id}>
-              <div className="overflow-hidden flex justify-center items-center">
-                <img src={speaker.image} alt={speaker.name} className="w-full h-auto" />
+              <div className="flex flex-col">
+                <div className="overflow-hidden flex justify-center items-center ">
+                  <img src={speaker.image} alt={speaker.name} className="w-full h-auto" />
+                </div>
+                <div className="bg-black bg-opacity-50 h-auto sm:h-[200px] lg:h-[150px] w-full p-4 text-center flex justify-center items-center">
+                  <p className="font-semibold text-sm md:text-2xl" style={{fontFamily: "Ubuntu"}}>{speaker.about}</p>
+                </div>
+
               </div>
               {insertLogo && (
                 <div className="hidden lg:flex justify-center items-center">
                   <img src={logo} alt="Logo" className="w-1/2 h-auto rounded-full" />
                 </div>
               )}
+
             </React.Fragment>
           );
         })}

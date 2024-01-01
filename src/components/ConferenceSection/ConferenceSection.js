@@ -1,6 +1,6 @@
 import React from 'react';
-import speakerImage from '../../images/new/1.png'; // Adjust the path as necessary
-import audienceImage from '../../images/new/2.png'; // Adjust the path as necessary
+import speakerImage from '../../images/new/1.jpg'; // Adjust the path as necessary
+import audienceImage from '../../images/new/2.jpg'; // Adjust the path as necessary
 
 
 const ConferenceSection = () => {
