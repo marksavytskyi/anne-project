@@ -48,7 +48,7 @@ const ConferenceSchedule = () => {
   }
   return (
     <div className="container text-white p-10">
-      <h1 className="text-6xl font-extrabold text-center mb-12">Conference Schedule</h1>
+      <h1 className="text-xl sm:text-3xl lg:text-6xl font-extrabold text-center mb-12">Conference Schedule</h1>
       {/* eslint-disable-next-line */}
       {scheduleData.map((day, idx) => {
         if(idx === currentIdx) {
