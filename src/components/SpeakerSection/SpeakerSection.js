@@ -9,31 +9,32 @@ import {
   SpeakerCard,
   Title,
 } from './SpeakerSection.styled';
+import logo from "../../images/logo.jpg"
 
 const speakersData = [
   {
+    name: 'Стас Герасімов',
+    about:
+      'Молодіжний  пастор',
+    image: require('../../images/new/stas.png'),
+  },
+  {
     name: 'Марк Сергеєв',
     about:
-      'Молодіжний  пастор, учасник гурту 4U Band, та M.Worship. Автор та виконавець популярних християнських пісень. Разом із братом Антоном заснували школу хвали і поклоніння, яка служить багатьом людям по всьому світі. Мелітополь 🇺🇦',
-    image: require('../../images/mark.jpg'),
+      'Молодіжний  пастор',
+    image: require('../../images/new/mark.png'),
   },
   {
-    name: 'Набіл Баббеісі',
+    name: 'Давід Ткаченко',
     about:
-      'Cтарший пастор об’єднання «House of Glory», магістр богослів‘я «Європейський Назарянський Коледж». Одеса 🇺🇦',
-    image: require('../../images/nabil.jpg'),
+      'Молодіжний  пастор',
+    image: require('../../images/new/tkachenko.png'),
   },
   {
-    name: 'Федір Герасимов',
+    name: 'Микола Савчук',
     about:
-      'Старший пастор церкви «ХЦ Пробудження» керівник Християнської Місії «Нове Життя». Одеса 🇺🇦',
-    image: require('../../images/gera.jpg'),
-  },
-  {
-    name: 'Володимир Головач',
-    about:
-      'Пастор, проповідник, служитель у ц. «Сінай», музикант та мотиваційний лідер. Чернівці 🇺🇦',
-    image: require('../../images/noname2.jpg'),
+      'Пастор',
+    image: require('../../images/new/mikola.jpg'),
   },
   // Add more speakers here...
 ];
@@ -53,22 +54,44 @@ const SpeakerSection = () => {
   };
 
   return (
-    <section id="section-1" style={{ backgroundColor: '#0e0e2c' }}>
-      <Container>
-        <SliderWrapper>
-          <Title>Speakers</Title>
-          <Slider {...settings}>
-            {speakersData.map((speaker, index) => (
-              <SpeakerCard key={index}>
-                <img src={speaker.image} alt={speaker.name} />
-                <h3>{speaker.name}</h3>
-                <p>{speaker.about}</p>
-              </SpeakerCard>
-            ))}
-          </Slider>
-        </SliderWrapper>
-      </Container>
+    <section className="container text-white p-10 pb-24">
+      <h1 className="text-6xl text-white font-extrabold text-center mb-24" style={{ fontFamily: "Ubuntu" }}>Speakers</h1>
+
+      <div className="grid grid-cols-3 gap-24">
+        {speakersData.map((speaker, idx) => {
+          // Assuming you have an even number of speakers, insert the logo after the first and third items
+          const insertLogo = idx === 0 || idx === 2;
+          return (
+            <React.Fragment key={speaker.id}>
+              <div className="overflow-hidden flex justify-center items-center">
+                <img src={speaker.image} alt={speaker.name} className="w-full h-auto" />
+              </div>
+              {insertLogo && (
+                <div className="flex justify-center items-center">
+                  <img src={logo} alt="Logo" className="w-1/2 h-auto rounded-full" />
+                </div>
+              )}
+            </React.Fragment>
+          );
+        })}
+      </div>
     </section>
+    // <section id="section-1" className="container">
+    //       <h1 className="text-6xl text-white font-extrabold text-center" style={{fontFamily: "Ubuntu"}}>Speakers</h1>
+    //   {speakers.map(el => {
+    //     return <div></div>
+    //   })}
+    //       {/*<Slider {...settings}>*/}
+    //       {/*  {speakersData.map((speaker, index) => (*/}
+    //       {/*    <SpeakerCard key={index}>*/}
+    //       {/*      <img src={speaker.image} alt={speaker.name} />*/}
+    //       {/*      <h3>{speaker.name}</h3>*/}
+    //       {/*      <p>{speaker.about}</p>*/}
+    //       {/*    </SpeakerCard>*/}
+    //       {/*  ))}*/}
+    //       {/*</Slider>*/}
+    //
+    // </section>
   );
 };
 

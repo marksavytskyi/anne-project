@@ -23,13 +23,11 @@ export const Title = styled.h1`
   ${props => props.theme.breakpoints.down('sm')} {
     /* Styles for small screens */
     font-size: 24px;
-    margin-bottom: 24px;
   }
 
   ${props => props.theme.breakpoints.up('md')} {
     /* Styles for medium and larger screens */
     font-size: 62px;
-    margin-bottom: 32px;
   }
 `;
 
