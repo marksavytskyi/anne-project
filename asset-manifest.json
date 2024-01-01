@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ebc403f.css",
-    "main.js": "/static/js/main.2988f2c0.js",
-    "static/media/schedule2.jpg": "/static/media/schedule2.cc50cba6f5acaff56ff9.jpg",
-    "static/media/schedule3.jpg": "/static/media/schedule3.c96505eab2975837995a.jpg",
-    "static/media/schedule1.jpg": "/static/media/schedule1.cc425067ac4ac050ff59.jpg",
-    "static/media/nabil.jpg": "/static/media/nabil.74c8d06d81370f6aa331.jpg",
-    "static/media/gera.jpg": "/static/media/gera.f126443f0e5a2afcaec7.jpg",
-    "static/media/noname2.jpg": "/static/media/noname2.d050f98bfcf98e2ed460.jpg",
+    "main.css": "/static/css/main.686669fe.css",
+    "main.js": "/static/js/main.fc57314b.js",
+    "static/media/mark.png": "/static/media/mark.b4627f6de0273fa88cf3.png",
+    "static/media/sss.png": "/static/media/sss.ca34f3d7b19b366d6948.png",
+    "static/media/tkachenko.png": "/static/media/tkachenko.f19e69f7a435fafc4df6.png",
+    "static/media/stas.png": "/static/media/stas.0795e00c6539143442e1.png",
+    "static/media/mikola.jpg": "/static/media/mikola.b217b5dcbba4e3801504.jpg",
+    "static/media/sd.JPG": "/static/media/sd.e70a47299419b429a7ea.JPG",
+    "static/media/1.png": "/static/media/1.a8a4c2beb4284d58a728.png",
+    "static/media/2.png": "/static/media/2.e777e82bdc6a711aa2c2.png",
     "static/media/logo.jpg": "/static/media/logo.189d640fa5e8b651d471.jpg",
-    "static/media/mark.jpg": "/static/media/mark.228e4e8640957c583056.jpg",
     "static/media/roboto-latin-400-normal.woff2": "/static/media/roboto-latin-400-normal.b009a76ad6afe4ebd301.woff2",
     "static/media/roboto-cyrillic-ext-400-normal.woff2": "/static/media/roboto-cyrillic-ext-400-normal.804378952da8a10faae2.woff2",
     "static/media/roboto-latin-400-normal.woff": "/static/media/roboto-latin-400-normal.3f2b9a42f643e62a49b7.woff",
@@ -29,11 +30,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "index.html": "/index.html",
-    "main.3ebc403f.css.map": "/static/css/main.3ebc403f.css.map",
-    "main.2988f2c0.js.map": "/static/js/main.2988f2c0.js.map"
+    "main.686669fe.css.map": "/static/css/main.686669fe.css.map",
+    "main.fc57314b.js.map": "/static/js/main.fc57314b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ebc403f.css",
-    "static/js/main.2988f2c0.js"
+    "static/css/main.686669fe.css",
+    "static/js/main.fc57314b.js"
   ]
 }
