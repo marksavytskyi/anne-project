@@ -30,11 +30,11 @@ const Countdown = ({ targetDate }) => {
   const timeUnits = Object.keys(timeLeft);
 
   return (
-    <div className="flex justify-center items-center space-x-10 text-white h-20 rounded-lg">
+    <div className="flex justify-center items-center space-x-4 lg:space-x-10 text-white h-20 rounded-lg">
       {timeUnits.map((unit, index) => (
         <React.Fragment key={unit}>
           <div className="flex flex-col items-center justify-center">
-            <span className="text-7xl font-bold relative">
+            <span className="text-5xl md:text-7xl font-bold relative">
               {timeLeft[unit]}
               <span className="text-sm uppercase absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full">
               {unit}
@@ -43,7 +43,7 @@ const Countdown = ({ targetDate }) => {
 
           </div>
           {index < timeUnits.length - 1 && ( // Only add colons between time units
-            <span className="text-7xl font-bold">:</span>
+            <span className="text-3xl lg:text-7xl  font-bold">:</span>
           )}
         </React.Fragment>
       ))}

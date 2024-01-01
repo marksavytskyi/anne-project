@@ -52,19 +52,19 @@ const ConferenceSchedule = () => {
       {/* eslint-disable-next-line */}
       {scheduleData.map((day, idx) => {
         if(idx === currentIdx) {
-          return <div key={day.date} className="mb-8 w-1/2 mx-auto">
+          return <div key={day.date} className="mb-8 lg:w-1/2 mx-auto">
             <div className="flex gap-4 justify-center items-center mb-6">
               <IoTriangle onClick={handlePrev} color="orange" size="30" className="-rotate-90"/>
-              <h2 className="text-3xl font-bold  text-center">{day.date}</h2>
+              <h2 className="text-xl md:text-3xl font-bold  text-center">{day.date}</h2>
               <IoTriangle onClick={handleNext} color="orange" size="30" className="rotate-90"/>
             </div>
             {day.events.map((event, idx) => (
-              <div key={idx} className="flex flex-row-reverse gap-14 items-center mb-4 w-full p-12 bg-[#2D3640]">
+              <div key={idx} className=" flex flex-row-reverse gap-7 md:gap-14 items-center mb-4 w-full p-6 md:p-12 bg-[#2D3640]">
                 <div className="flex-grow">
-                  <h3 className="text-xl font-semibold">{event.title}</h3>
-                  <p>{event.description}</p>
+                  <h3 className="text-md md:text-xl font-semibold">{event.title}</h3>
+                  <p className="text-sm md:text-md">{event.description}</p>
                 </div>
-                <span className="w-32 text-xl font-bold text-right">{event.time}</span>
+                <span className="w-auto text-md md:text-xl font-bold text-center">{event.time}</span>
               </div>
             ))}
 

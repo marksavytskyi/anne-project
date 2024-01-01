@@ -5,7 +5,7 @@ import audienceImage from '../../images/new/2.png'; // Adjust the path as necess
 
 const ConferenceSection = () => {
   return (
-    <section className="container text-white py-24 flex flex-wrap lg:flex-nowrap justify-evenly items-center bg-opacity-90 gap-20" style={{fontFamily:"Ubuntu"}}>
+    <section className="container text-white py-12 lg:py-24 flex flex-wrap lg:flex-nowrap justify-evenly items-center bg-opacity-90 gap-10 lg:gap-20" style={{fontFamily:"Ubuntu"}}>
       <div className=" w-full lg:w-1/2 h-full relative">
           <img src={speakerImage} alt="Speaker" className="w-2/3 full object-cover"/>
 

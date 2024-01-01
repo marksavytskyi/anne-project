@@ -49,7 +49,7 @@ const SpeakerSection = () => {
     <section className="container text-white p-10 pb-24">
       <h1 className="text-6xl text-white font-extrabold text-center mb-24" style={{ fontFamily: "Ubuntu" }}>Speakers</h1>
 
-      <div className="grid grid-cols-3 gap-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 gap-y-10 lg:gap-x-0">
         {speakersData.map((speaker, idx) => {
           // Assuming you have an even number of speakers, insert the logo after the first and third items
           const insertLogo = idx === 0 || idx === 2;
@@ -59,7 +59,7 @@ const SpeakerSection = () => {
                 <img src={speaker.image} alt={speaker.name} className="w-full h-auto" />
               </div>
               {insertLogo && (
-                <div className="flex justify-center items-center">
+                <div className="hidden lg:flex justify-center items-center">
                   <img src={logo} alt="Logo" className="w-1/2 h-auto rounded-full" />
                 </div>
               )}

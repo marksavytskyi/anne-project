@@ -27,7 +27,6 @@ const customTheme = createTheme({
 export const App = () => {
   const sectionStyle = {
     display: 'flex',
-    flexDirection: 'row',
     backgroundImage: `url(${require("../images/new/sss.png")})`,
     backgroundColor: 'lightgray', // Fallback or overlay color
     backgroundSize: 'cover', // Cover the entire section
@@ -47,7 +46,7 @@ export const App = () => {
   };
   return (
     <ThemeProvider theme={customTheme}>
-      <Main style={sectionStyle}>
+      <Main style={sectionStyle} className="flex-col lg:flex-row">
         <div style={overlayStyle}>
           <DrawerAppBar></DrawerAppBar>
           <Offer></Offer>
