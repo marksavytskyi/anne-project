@@ -28,7 +28,7 @@ const ConferenceSection = () => {
 
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-gray-800 p-4 text-center rounded">
-            <p className="text-4xl font-bold">2</p>
+            <p className="text-4xl font-bold">3</p>
             <p>Days Event</p>
           </div>
           <div className="bg-gray-800 p-4 text-center rounded">
