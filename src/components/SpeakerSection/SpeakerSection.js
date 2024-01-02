@@ -25,7 +25,7 @@ const speakersData = [
   {
     name: 'Давід Ткаченко',
     about:
-      'Молодіжний  лідер',
+      'Молодіжний лідер церкви «Дім слави», Одеса',
     image: require('../../images/new/tkachenko.png'),
   },
 
