@@ -25,7 +25,7 @@ const speakersData = [
   {
     name: 'Давід Ткаченко',
     about:
-      'Молодіжний  пастор',
+      'Молодіжний  лідер',
     image: require('../../images/new/tkachenko.png'),
   },
 
