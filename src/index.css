@@ -28,7 +28,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./images/new/sd.JPG"); /* Add your image path here */
+
+  background-image: url("./images/new/sd2.JPG"); /* Add your image path here */
   background-size: cover; /* Cover the entire viewport */
   background-position: center; /* Center the image in the viewport */
   background-repeat: no-repeat; /* Do not repeat the image */
